@@ -1011,13 +1011,15 @@ def waveform_shape(
     if np.any(np.isnan(this_waveform)):
         n_peaks = np.nan
         n_troughs = np.nan
-        is_somatic = np.nan
-        peak_locs = np.nan
-        trough_locs = np.nan
         waveform_duration_peak_trough = np.nan
-        spatial_decay_points = np.full((1, NUM_CHANNELS_FOR_FIT), np.nan)
         spatial_decay_slope = np.nan
         waveform_baseline = np.nan
+        scnd_peak_to_trough_ratio = np.nan
+        peak1_to_peak2_ratio = np.nan
+        main_peak_to_trough_ratio = np.nan
+        trough_to_peak2_ratio = np.nan
+        peak_before_width = np.nan
+        trough_width = np.nan
     else:
         # New finding peaks/trough for somatic/non-somatic
         min_prominence = min_thresh_detect_peaks_troughs * np.max(np.abs(this_waveform))
